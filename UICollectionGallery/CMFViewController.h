@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMFViewController : UIViewController
+@interface CMFViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end

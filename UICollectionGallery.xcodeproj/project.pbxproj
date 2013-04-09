@@ -18,6 +18,9 @@
 		227263BD170F28AE00586321 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 227263BC170F28AE00586321 /* Default-568h@2x.png */; };
 		227263C0170F28AE00586321 /* CMFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 227263BF170F28AE00586321 /* CMFViewController.m */; };
 		227263C3170F28AE00586321 /* CMFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227263C1170F28AE00586321 /* CMFViewController.xib */; };
+		227D02701714657A00763F3A /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 227D026F1714657A00763F3A /* Assets */; };
+		227D02741714665F00763F3A /* CMFGalleryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227D02731714665F00763F3A /* CMFGalleryCell.m */; };
+		227D02761714668900763F3A /* CMFGalleryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227D02751714668900763F3A /* CMFGalleryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		227263BE170F28AE00586321 /* CMFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMFViewController.h; sourceTree = "<group>"; };
 		227263BF170F28AE00586321 /* CMFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMFViewController.m; sourceTree = "<group>"; };
 		227263C2170F28AE00586321 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CMFViewController.xib; sourceTree = "<group>"; };
+		227D026F1714657A00763F3A /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		227D02721714665F00763F3A /* CMFGalleryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFGalleryCell.h; sourceTree = "<group>"; };
+		227D02731714665F00763F3A /* CMFGalleryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFGalleryCell.m; sourceTree = "<group>"; };
+		227D02751714668900763F3A /* CMFGalleryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMFGalleryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +90,8 @@
 		227263AC170F28AE00586321 /* UICollectionGallery */ = {
 			isa = PBXGroup;
 			children = (
+				227D02711714663700763F3A /* Collection view cells */,
+				227D026F1714657A00763F3A /* Assets */,
 				227263B5170F28AE00586321 /* CMFAppDelegate.h */,
 				227263B6170F28AE00586321 /* CMFAppDelegate.m */,
 				227263BE170F28AE00586321 /* CMFViewController.h */,
@@ -105,6 +114,16 @@
 				227263BC170F28AE00586321 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		227D02711714663700763F3A /* Collection view cells */ = {
+			isa = PBXGroup;
+			children = (
+				227D02721714665F00763F3A /* CMFGalleryCell.h */,
+				227D02731714665F00763F3A /* CMFGalleryCell.m */,
+				227D02751714668900763F3A /* CMFGalleryCell.xib */,
+			);
+			name = "Collection view cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +183,8 @@
 				227263BB170F28AE00586321 /* Default@2x.png in Resources */,
 				227263BD170F28AE00586321 /* Default-568h@2x.png in Resources */,
 				227263C3170F28AE00586321 /* CMFViewController.xib in Resources */,
+				227D02701714657A00763F3A /* Assets in Resources */,
+				227D02761714668900763F3A /* CMFGalleryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +198,7 @@
 				227263B3170F28AE00586321 /* main.m in Sources */,
 				227263B7170F28AE00586321 /* CMFAppDelegate.m in Sources */,
 				227263C0170F28AE00586321 /* CMFViewController.m in Sources */,
+				227D02741714665F00763F3A /* CMFGalleryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +321,7 @@
 				227263C8170F28AE00586321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
