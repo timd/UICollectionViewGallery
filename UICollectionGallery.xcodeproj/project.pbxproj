@@ -90,13 +90,10 @@
 		227263AC170F28AE00586321 /* UICollectionGallery */ = {
 			isa = PBXGroup;
 			children = (
+				227D02771714908800763F3A /* App delegate */,
+				227D02781714909200763F3A /* View controller */,
 				227D02711714663700763F3A /* Collection view cells */,
 				227D026F1714657A00763F3A /* Assets */,
-				227263B5170F28AE00586321 /* CMFAppDelegate.h */,
-				227263B6170F28AE00586321 /* CMFAppDelegate.m */,
-				227263BE170F28AE00586321 /* CMFViewController.h */,
-				227263BF170F28AE00586321 /* CMFViewController.m */,
-				227263C1170F28AE00586321 /* CMFViewController.xib */,
 				227263AD170F28AE00586321 /* Supporting Files */,
 			);
 			path = UICollectionGallery;
@@ -124,6 +121,25 @@
 				227D02751714668900763F3A /* CMFGalleryCell.xib */,
 			);
 			name = "Collection view cells";
+			sourceTree = "<group>";
+		};
+		227D02771714908800763F3A /* App delegate */ = {
+			isa = PBXGroup;
+			children = (
+				227263B5170F28AE00586321 /* CMFAppDelegate.h */,
+				227263B6170F28AE00586321 /* CMFAppDelegate.m */,
+			);
+			name = "App delegate";
+			sourceTree = "<group>";
+		};
+		227D02781714909200763F3A /* View controller */ = {
+			isa = PBXGroup;
+			children = (
+				227263BE170F28AE00586321 /* CMFViewController.h */,
+				227263BF170F28AE00586321 /* CMFViewController.m */,
+				227263C1170F28AE00586321 /* CMFViewController.xib */,
+			);
+			name = "View controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
