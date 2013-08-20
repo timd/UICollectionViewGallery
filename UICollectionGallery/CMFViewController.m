@@ -12,6 +12,7 @@
 @interface CMFViewController ()
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic) int currentIndex;
 @end
 
 @implementation CMFViewController
@@ -73,30 +74,42 @@
 #pragma mark -
 #pragma mark Data methods
 -(void)loadImages {
+    
     NSString *sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Assets"];
     self.dataArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:sourcePath error:NULL];
+
 }
 
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    CGPoint currentOffset = self.collectionView.contentOffset;
-    
-    float newOffsetX;
-    
-    if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-        // currently in portrait
-        float offsetIndex = (int)currentOffset.x / [[UIScreen mainScreen] bounds].size.width ;
-        newOffsetX = offsetIndex * [[UIScreen mainScreen] bounds].size.height;
-    } else {
-        // currently in landscape
-        float offsetIndex = (int)currentOffset.x / [[UIScreen mainScreen] bounds].size.height;
-        newOffsetX = offsetIndex * [[UIScreen mainScreen] bounds].size.width;
-    }
-    
-    CGPoint newOffset = CGPointMake(newOffsetX, 0);
-    [self.collectionView setContentOffset:newOffset];
+#pragma mark -
+#pragma mark Rotation handling methods
 
-    [self.collectionView reloadData];
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:
+(NSTimeInterval)duration {
+
+    // Fade the collectionView out
+    [self.collectionView setAlpha:0.0f];
+    
+    // Suppress the layout errors by invalidating the layout
+    [self.collectionView.collectionViewLayout invalidateLayout];
+  
+    // Calculate the index of the item that the collectionView is currently displaying
+    CGPoint currentOffset = [self.collectionView contentOffset];    
+    self.currentIndex = currentOffset.x / self.collectionView.frame.size.width;
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+  
+    // Force realignment of cell being displayed
+    
+    CGSize currentSize = self.collectionView.bounds.size;
+    float offset = self.currentIndex * currentSize.width;
+    [self.collectionView setContentOffset:CGPointMake(offset, 0)];
+    
+    // Fade the collectionView back in
+    [UIView animateWithDuration:0.125f animations:^{
+        [self.collectionView setAlpha:1.0f];
+    }];
+    
+}
 
 @end
