@@ -100,7 +100,6 @@
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
   
     // Force realignment of cell being displayed
-    
     CGSize currentSize = self.collectionView.bounds.size;
     float offset = self.currentIndex * currentSize.width;
     [self.collectionView setContentOffset:CGPointMake(offset, 0)];
